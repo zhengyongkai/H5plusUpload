@@ -64,7 +64,7 @@
             <div>共{{ total }}件</div>
           </div>
           <div
-            :class="'next ' + (total.length == 0 ? '' : 'green')"
+            :class="'next ' + (total == 0 ? '' : 'green')"
             @click="accounts"
           >
             下一步
