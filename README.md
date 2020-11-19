@@ -20,3 +20,9 @@ cnpm run dev
 2. Upload组件为完善
 
 用得上的可以点个star 
+
+
+# vant-shop-list
+
+<h5>
+一个用vant+vue实现的购物车页面</h5>
