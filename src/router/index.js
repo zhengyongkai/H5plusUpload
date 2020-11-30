@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import GoodLIst from '@/components/GoodList'
+import BetterGoodLIst from '@/components/BetterGoodLIst'
 Vue.use(Router)
 
 export default new Router({
@@ -12,9 +13,14 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/GoodLIst',
+      path: '/goodLIst',
       name: 'GoodLIst',
       component: GoodLIst
+    },
+    {
+      path: '/betterGoodLIst',
+      name: 'BetterGoodLIst',
+      component: BetterGoodLIst
     }
   ]
 })
