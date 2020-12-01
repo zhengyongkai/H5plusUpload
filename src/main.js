@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import 'vant/lib/index.css';
 Vue.config.productionTip = false
-
+Vue.prototype.$bus = new Vue()
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
