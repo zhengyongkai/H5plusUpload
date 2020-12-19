@@ -1,0 +1,40 @@
+<!--  -->
+<template>
+  <div>
+    <button @click="publish">主题推送</button>
+  </div>
+</template>
+<script>
+import initMqtt from "../../utils/initMqtt";
+export default {
+  data() {
+    return {};
+  },
+  props: [],
+  components: {},
+  created() {},
+  mounted() {
+    // console.log($mqtt)
+    this.initmqtt = new initMqtt();
+    this.client = this.initmqtt.connect(
+      () => {
+        this.client.subscribe("home/garden/fountainss");
+      },
+      this.onConnectionLost,
+      this.onMessageArrived
+    );
+  },
+  methods: {
+    onMessageArrived(a,b){
+      console.log('收到的数据',b)
+    },
+    onConnectionLost(){
+      console.log('链接丢失')
+    },
+    publish(){
+      this.client.publish('home/garden/fountainss','我爱你')
+    }
+  }
+};
+</script>
+<style lang="scss" scoped></style>

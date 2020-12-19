@@ -4,6 +4,8 @@ import HelloWorld from "@/components/HelloWorld";
 import GoodLIst from "@/components/GoodList";
 import BetterGoodLIst from '@/components/BetterGoodLIst'
 import dataTrans from "@/components/dataTrans";
+import rightClickArea from '@/components/toast/rightClickArea.vue'
+import mqttConnect from '@/components/mqttText/mqttConnect.vue'
 Vue.use(Router);
 
 
@@ -33,6 +35,16 @@ export default new Router({
       path: '/betterGoodLIst',
       name: 'BetterGoodLIst',
       component: BetterGoodLIst
+    },
+    {
+      path: '/rightClickArea',
+      name: 'rightClickArea',
+      component: rightClickArea
+    },
+    {
+      path: '/mqttText',
+      name: 'mqttText',
+      component: mqttConnect
     }
   ]
 });
