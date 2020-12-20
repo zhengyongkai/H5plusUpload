@@ -26,3 +26,9 @@ cnpm run dev
 
 <h5>
 一个用vant+vue实现的购物车页面</h5>
+
+
+# vant-mqtt-js
+
+<h5>
+mqtt实例</h5>
