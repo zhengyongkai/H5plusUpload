@@ -52,6 +52,7 @@ export default {
   },
   destroyed() {
     clearInterval(this.timer);
+    this.timer = null;
   },
   methods: {
     onMessageArrived(a, b) {
