@@ -3,13 +3,24 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
-import mqtt from "mqtt";
+
 import "vant/lib/index.css";
 import store from "./store/index.js";
 import create from "./components/toast/index";
-import initmqtt from './utils/initMqtt'
+import initmqtt from "./utils/initMqtt";
+import * as echarts from 'echarts';
+import VideoPlayer from 'vue-video-player'
+import moment from 'moment'//导入文件
+import 'vue-video-player/src/custom-theme.css'
+import 'video.js/dist/video-js.css'
+
+Vue.prototype.$moment = moment;//赋值使用
+
+moment.locale('zh-cn');//需要汉化
+Vue.use(VideoPlayer)
+Vue.prototype.$echarts = echarts;
 Vue.use(create);
-Vue.prototype.$mqtt = mqtt;
+
 Vue.config.productionTip = false;
 Vue.prototype.$bus = new Vue();
 Vue.directive("focus", {

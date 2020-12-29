@@ -6,6 +6,9 @@ import BetterGoodLIst from '@/components/BetterGoodLIst'
 import dataTrans from "@/components/dataTrans";
 import rightClickArea from '@/components/toast/rightClickArea.vue'
 import mqttConnect from '@/components/mqttText/mqttConnect.vue'
+import panel1 from '@/components/echartsText/panel1.vue'
+import vueRtmp from '@/components/vue-rtmp/vue-rtmp.vue'
+import mqttCharts from '@/components/mqttCharts/mqttCharts.vue'
 Vue.use(Router);
 
 
@@ -45,6 +48,21 @@ export default new Router({
       path: '/mqttText',
       name: 'mqttText',
       component: mqttConnect
+    },
+    {
+      path: '/panel1',
+      name: 'panel1',
+      component: panel1
+    },
+    {
+      path: '/vue-rtmp',
+      name: 'vue-rtmp',
+      component: vueRtmp
+    },
+    {
+      path: '/mqttCharts',
+      name: 'mqttCharts',
+      component: mqttCharts
     }
   ]
 });

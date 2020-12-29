@@ -42,6 +42,7 @@ initMqtt.prototype.connect = function(onSuccess, onLost, onMessageArrival) {
 };
 initMqtt.prototype.disconnect = function() {
   if (this.client) {
+    console.log('断开连接')
     this.client.disconnect();
   }
 };
