@@ -32,3 +32,7 @@ cnpm run dev
 
 <h5>
 mqtt实例</h5>
+
+# vue-echarts
+
+每三秒获取一次数据
