@@ -21,35 +21,18 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.drawChart();
-      // console.log( this.$moment(this.date).format("hh:mm:ss"))
-      this.initmqtt = new initMqtt();
-      this.client = this.initmqtt.connect(
-        () => {
-          console.log("链接成功,开始订阅主题");
-          this.client.subscribe("home/line");
-        },
-        this.onConnectionLost,
-        this.onMessageArrived
-      );
-      this.timer = setInterval(() => {
-        this.data.push(this.$moment(this.date).format("hh:mm:ss"));
+      // console.log( this.$moment(this.date).format("hh:mm:ss"))4
+      var option = this.myChart.getOption();
+      let j = parseInt(this.$moment().daysInMonth());
+      for (let i = 1; i <= j; i++) {
+        this.data.push(i + "日");
         this.datas.push(Math.floor(Math.random() * 10 + 1));
         this.datass.push(Math.floor(Math.random() * 10 + 1));
-        if (this.data.length > 5) {
-          this.data.splice(0, 1);
-          this.datas.splice(0, 1);
-          this.datass.splice(0, 1);
-        }
-        var option = this.myChart.getOption();
-        option.xAxis[0].data = this.data;
-        option.series[0].data = this.datas;
-        option.series[1].data = this.datass;
-        // console.log( option.xAxis)
-        console.log(option.series[0].data);
-        console.log(option.series[1].data);
-        this.myChart.setOption(option);
-        this.$forceUpdate();
-      }, 3000);
+      }
+      option.xAxis[0].data = this.data;
+      option.series[0].data = this.datas;
+      option.series[1].data = this.datass;
+      this.myChart.setOption(option);
     });
   },
   destroyed() {
@@ -76,6 +59,14 @@ export default {
         legend: {
           data: ["供电量", "用量"]
         },
+        dataZoom: [
+          {
+            type: "slider",
+            show: true,
+            start: 0,
+            end: 100 //初始化滚动条
+          }
+        ],
         grid: {
           containLabel: true
         },

@@ -9,6 +9,7 @@ import mqttConnect from '@/components/mqttText/mqttConnect.vue'
 import panel1 from '@/components/echartsText/panel1.vue'
 import vueRtmp from '@/components/vue-rtmp/vue-rtmp.vue'
 import mqttCharts from '@/components/mqttCharts/mqttCharts.vue'
+import chartsScroll from '@/components/mqttCharts/chartsScroll.vue'
 Vue.use(Router);
 
 
@@ -63,6 +64,11 @@ export default new Router({
       path: '/mqttCharts',
       name: 'mqttCharts',
       component: mqttCharts
+    },
+    {
+      path: '/chartsScroll',
+      name: 'chartsScroll',
+      component: chartsScroll
     }
   ]
 });
