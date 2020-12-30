@@ -59,10 +59,3 @@ export default {
   }
 };
 </script>
-
-<style>
-#app {
-  padding: 10px;
-  margin-top: 60px;
-}
-</style>
