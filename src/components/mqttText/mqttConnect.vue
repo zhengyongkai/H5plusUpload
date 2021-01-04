@@ -37,6 +37,8 @@ export default {
     },
   },
   beforeDestroy() {
+    // console.log(this.client.unsubscribe)
+    this.client.unsubscribe("home/garden/fountainss")
     this.client = null;
   }
 };

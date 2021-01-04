@@ -19,7 +19,7 @@ function initMqtt(options) {
   this.hostname = hostname || "192.168.10.65";
   this.port = port || 9001;
   this.options = {
-    clean: true, // 保留会话
+    // clean: true, // 保留会话
     connectTimeout: 4000, // 超时时间
     reconnectPeriod: 4000, // 重连时间间隔
     clientId: "41215676e5cf4e638a3fae8c5cf38024",
