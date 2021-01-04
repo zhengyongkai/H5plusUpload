@@ -36,7 +36,9 @@ export default {
       this.client.publish("home/garden/fountainss", "我爱你");
     },
   },
-  beforeDestroy() {}
+  beforeDestroy() {
+    this.client = null;
+  }
 };
 </script>
 <style lang="scss" scoped></style>

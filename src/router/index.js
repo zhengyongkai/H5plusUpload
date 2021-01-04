@@ -11,6 +11,7 @@ import vueRtmp from '@/components/vue-rtmp/vue-rtmp.vue'
 import mqttCharts from '@/components/mqttCharts/mqttCharts.vue'
 import chartsScroll from '@/components/mqttCharts/chartsScroll.vue'
 import messageText from '@/components/message/messageText.vue'
+import h5upload from '@/components/h5upload/h5upload.vue'
 Vue.use(Router);
 
 
@@ -21,6 +22,11 @@ export default new Router({
       path: "/",
       name: "HelloWorld",
       component: HelloWorld
+    },
+    {
+      path: "/h5upload",
+      name: "h5upload",
+      component: h5upload
     },
     {
       path: "/GoodLIst",

@@ -57,7 +57,7 @@ export default {
     });
   },
   destroyed() {
-    bus.$off("child2", this.destroyedMessage);
+    this.$bus.$off("child2", this.destroyedMessage);
   }
 };
 </script>

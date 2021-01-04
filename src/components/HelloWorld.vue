@@ -1,53 +1,28 @@
 <template>
   <div class="hello">
-    <dxUpload
-      @onChange="change"
-      ref="upload"
-      @chooseFile="onChooseFile"
-    ></dxUpload>
-    <picActionSheet
-      @change="itemChange"
-      :show="showPhotoDialog"
-      @fileChangeSuccess="onFileChangeSuccess"
-    ></picActionSheet>
+    <van-button @click="to('h5upload')">h5plus上传</van-button>
+    <van-button @click="to('GoodLIst')">简单的购物车页面</van-button>
+    <van-button @click="to('dataTrans')">组件传值</van-button>
+    <van-button @click="to('mqttText')">mqtt实例</van-button>
+    <van-button @click="to('mqttCharts')">echarts实例</van-button>
+    <van-button @click="to('message')">vue.extend构造函数组件</van-button>
   </div>
 </template>
 
 <script>
-import dxupload from "./dxupload/dxUpload.vue";
-import { dataURLtoFile } from "../utils/utils";
-import picActionSheet from "./actionsheet/picActionSheet.vue";
+import { Button } from "vant";
+
 export default {
   name: "HelloWorld",
   components: {
-    [dxupload.name]: dxupload,
-    [picActionSheet.name]: picActionSheet
+    "van-button": Button
   },
   data() {
-    return {
-      msg: "Welcome to Your Vue.js App",
-      showPhotoDialog: { visable: false }
-    };
+    return {};
   },
   methods: {
-    itemChange() {
-      this.$refs.upload.uploadFile();
-    },
-    onChooseFile() {
-      //https://blog.csdn.net/github_35549695/article/details/82770044
-      this.showPhotoDialog.visable = true;
-    },
-    change() {
-      console.log("change");
-    },
-    onFileChangeSuccess(item) {
-      //转化文件格式 将base64转File
-      let e = {
-        target: {
-          files: [dataURLtoFile(item, new Date().getTime() + ".jpeg")]
-        }
-      };
-      this.$refs.upload.fileChangeHandler(e);
+    to(url){
+      this.$router.push(url)
     }
   }
 };
