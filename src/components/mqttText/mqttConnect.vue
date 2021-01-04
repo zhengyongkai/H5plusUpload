@@ -2,7 +2,6 @@
 <template>
   <div>
     <button @click="publish">主题推送</button>
-    <button @click="unconnect">断开连接</button>
   </div>
 </template>
 <script>
@@ -36,11 +35,6 @@ export default {
     publish() {
       this.client.publish("home/garden/fountainss", "我爱你");
     },
-    unconnect() {
-      this.client.unsubscribe("home/garden/fountainss"); //取消订阅
-      this.client = null;
-      //断开连接
-    }
   },
   beforeDestroy() {}
 };
