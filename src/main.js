@@ -7,6 +7,7 @@ import router from "./router";
 import "vant/lib/index.css";
 import store from "./store/index.js";
 import create from "./components/toast/index";
+
 import initmqtt from "./utils/initMqtt";
 import * as echarts from 'echarts';
 import VideoPlayer from 'vue-video-player'
@@ -20,7 +21,8 @@ moment.locale('zh-cn');//需要汉化
 Vue.use(VideoPlayer)
 Vue.prototype.$echarts = echarts;
 Vue.use(create);
-
+import message from "./components/message/index";
+Vue.use(message);
 Vue.config.productionTip = false;
 Vue.prototype.$bus = new Vue();
 Vue.directive("focus", {

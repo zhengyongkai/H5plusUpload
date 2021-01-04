@@ -10,7 +10,9 @@ import panel1 from '@/components/echartsText/panel1.vue'
 import vueRtmp from '@/components/vue-rtmp/vue-rtmp.vue'
 import mqttCharts from '@/components/mqttCharts/mqttCharts.vue'
 import chartsScroll from '@/components/mqttCharts/chartsScroll.vue'
+import messageText from '@/components/message/messageText.vue'
 Vue.use(Router);
+
 
 
 export default new Router({
@@ -69,6 +71,11 @@ export default new Router({
       path: '/chartsScroll',
       name: 'chartsScroll',
       component: chartsScroll
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: messageText
     }
   ]
 });
