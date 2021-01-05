@@ -5,7 +5,6 @@
   </div>
 </template>
 <script>
-import initMqtt from "../../utils/initMqtt";
 export default {
   data() {
     return {
@@ -22,15 +21,6 @@ export default {
     this.$nextTick(() => {
       this.drawChart();
       // console.log( this.$moment(this.date).format("hh:mm:ss"))
-      this.initmqtt = new initMqtt();
-      this.client = this.initmqtt.connect(
-        () => {
-          console.log("链接成功,开始订阅主题");
-          this.client.subscribe("home/line");
-        },
-        this.onConnectionLost,
-        this.onMessageArrived
-      );
       this.timer = setInterval(() => {
         this.data.push(this.$moment(this.date).format("hh:mm:ss"));
         this.datas.push(Math.floor(Math.random() * 10 + 1));

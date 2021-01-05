@@ -16,15 +16,15 @@ function initMqtt(options) {
     password,
     path
   } = options || {};
-  this.hostname = hostname || "192.168.10.65";
+  this.hostname = hostname || "192.168.10.63";
   this.port = port || 9001;
   this.options = {
-    // clean: true, // 保留会话
-    connectTimeout: 4000, // 超时时间
-    reconnectPeriod: 4000, // 重连时间间隔
+    clean: true, // 保留会话
+    connectTimeout: 500, // 超时时间
+    reconnectPeriod: 500, // 重连时间间隔
     clientId: "41215676e5cf4e638a3fae8c5cf38024",
     username: userName || "admin",
-    password: password || "123456",
+    password: password || "123456"
   };
   this.connectUrl = `ws://${this.hostname}:${this.port}`;
 }
@@ -35,14 +35,22 @@ initMqtt.prototype.connect = function(onSuccess, onLost, onMessageArrival) {
   } catch (error) {
     console.log("mqtt.connect error", error);
   }
+  
   this.client.on("connect", () => onSuccess());
-  this.client.on("error", error => onLost);
-  this.client.on("message", (topic, message) => onMessageArrival(topic, message.toString()));
+  this.client.on("error", () => onLost());
+  this.client.on("timeout", () => {
+    console.log('....')
+  });
+  this.client.on("message", (topic, message) =>
+    onMessageArrival(topic, message.toString())
+  );
+  console.log(this.client);
   return this.client;
 };
 initMqtt.prototype.disconnect = function() {
   if (this.client) {
-     this.client = null;
+    this.client.end();
+    this.client = null;
   }
 };
 
