@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import HelloWorld from "@/components/HelloWorld";
 import GoodLIst from "@/components/GoodList";
-import BetterGoodLIst from '@/components/BetterGoodLIst'
+import BetterGoodLIst from '@/components/BetterGoodLIst.vue'
 import dataTrans from "@/components/dataTrans";
 import rightClickArea from '@/components/toast/rightClickArea.vue'
 import mqttConnect from '@/components/mqttText/mqttConnect.vue'
