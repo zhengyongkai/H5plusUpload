@@ -16,15 +16,16 @@ function initMqtt(options) {
     password,
     path
   } = options || {};
-  this.hostname = hostname || "192.168.10.63";
-  this.port = port || 9001;
+  this.hostname = hostname || "broker.emqx.io";
+  this.port = port || 8083;
   this.options = {
     clean: true, // 保留会话
-    connectTimeout: 500, // 超时时间
+    connectTimeout: 2000, // 超时时间
     reconnectPeriod: 500, // 重连时间间隔
-    clientId: "41215676e5cf4e638a3fae8c5cf38024",
+    clientId: "clientId-Ba3y1BYQBT",
     username: userName || "admin",
-    password: password || "123456"
+    password: password || "123456",
+    path:'/mqtt'
   };
   this.connectUrl = `ws://${this.hostname}:${this.port}`;
 }
