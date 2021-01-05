@@ -36,3 +36,13 @@ mqtt实例</h5>
 # vue-echarts
 
 每三秒获取一次数据
+
+
+# vue-element-message
+
+使用vue.extend 实现的elementui的message弹窗
+
+# vue-transfer
+
+vue传输数据各种方法
+
