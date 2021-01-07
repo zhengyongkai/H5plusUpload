@@ -14,7 +14,9 @@ import VideoPlayer from 'vue-video-player'
 import moment from 'moment'//导入文件
 import 'vue-video-player/src/custom-theme.css'
 import 'video.js/dist/video-js.css'
-
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 Vue.prototype.$moment = moment;//赋值使用
 
 moment.locale('zh-cn');//需要汉化
