@@ -13,6 +13,7 @@ import chartsScroll from '@/components/mqttCharts/chartsScroll.vue'
 import messageText from '@/components/message/messageText.vue'
 import h5upload from '@/components/h5upload/h5upload.vue'
 import good from '@/components/bugText/good.vue'
+import eCharts from '@/components/echartsfun/eCharts.vue'
 Vue.use(Router);
 
 
@@ -88,6 +89,12 @@ export default new Router({
       path: '/bugText/good',
       name: 'good',
       component: good
+    },
+    {
+      path: '/eCharts',
+      name: 'eCharts',
+      component: eCharts
     }
+    
   ]
 });

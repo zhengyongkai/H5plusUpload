@@ -6,6 +6,7 @@
     <van-button @click="to('mqttText')">mqtt实例</van-button>
     <van-button @click="to('mqttCharts')">echarts实例</van-button>
     <van-button @click="to('message')">vue.extend构造函数组件</van-button>
+      <van-button @click="to('echarts')">echarts配置实例</van-button>
   </div>
 </template>
 
